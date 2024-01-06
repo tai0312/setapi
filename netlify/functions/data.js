@@ -6,6 +6,15 @@ exports.handler = async () => {
   }
 
   const data = {
+    dog : [], cat : []
+  }
+  for(let i = 0;i < 12;i++){
+     const responseDog = await fetch("https://dog.ceo/api/breeds/image/random");
+     const responseCat = await fetch("https://api.thecatapi.com/v1/images/search");
+     data.dog[i] = responseDog.json().message;
+     data.cat[i] = responseCat.json().url;
+  }
+  const data1 = {
     "dog" : ["https://images.dog.ceo/breeds/dhole/n02115913_312.jpg",
         "https://images.dog.ceo/breeds/pomeranian/n02112018_4840.jpg",
         "https://images.dog.ceo/breeds/vizsla/n02100583_917.jpg",
