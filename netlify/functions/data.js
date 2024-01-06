@@ -1,6 +1,12 @@
 exports.handler = async () => {
+  const headers = {
+    "Access-Control-Allow-Origin" : "https://silly-cannoli-d41459.netlify.app",
+    "Access-Control-Allow-Methods": "GET",
+    "Access-Control-Allow-Headers": "Content-Type"
+  }
     return {
       statusCode: 200,
+      headers: headers,
       body: JSON.stringify({
         dog: ["https://images.dog.ceo/breeds/dhole/n02115913_312.jpg",
         "https://images.dog.ceo/breeds/pomeranian/n02112018_4840.jpg",
