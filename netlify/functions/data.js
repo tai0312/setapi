@@ -4,11 +4,9 @@ exports.handler = async () => {
     "Access-Control-Allow-Methods": "GET",
     "Access-Control-Allow-Headers": "Content-Type"
   }
-    return {
-      statusCode: 200,
-      headers: headers,
-      body: JSON.stringify({
-        dog: ["https://images.dog.ceo/breeds/dhole/n02115913_312.jpg",
+
+  const data = {
+    dog : ["https://images.dog.ceo/breeds/dhole/n02115913_312.jpg",
         "https://images.dog.ceo/breeds/pomeranian/n02112018_4840.jpg",
         "https://images.dog.ceo/breeds/vizsla/n02100583_917.jpg",
         "https://images.dog.ceo/breeds/terrier-border/n02093754_1111.jpg",
@@ -21,7 +19,7 @@ exports.handler = async () => {
         "https://images.dog.ceo/breeds/pyrenees/n02111500_8884.jpg",
         "https://images.dog.ceo/breeds/labradoodle/Cali.jpg"
         ],
-        cat:["https://cdn2.thecatapi.com/images/bi0.jpg",
+        cat : ["https://cdn2.thecatapi.com/images/bi0.jpg",
         "https://cdn2.thecatapi.com/images/7kr.jpg",
         "https://cdn2.thecatapi.com/images/94h.png",
         "https://cdn2.thecatapi.com/images/snxE5_PPX.jpg",
@@ -34,6 +32,10 @@ exports.handler = async () => {
         "https://cdn2.thecatapi.com/images/b11.jpg",
         "https://cdn2.thecatapi.com/images/MTUzNjQwNw.jpg"
         ]
-      })
+  }
+    return {
+      statusCode: 200,
+      headers: headers,
+      body: JSON.stringify(data)
     };
   };
