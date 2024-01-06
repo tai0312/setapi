@@ -1,13 +1,13 @@
 async function fetchDagData(){
   const response = await fetch("https://dog.ceo/api/breeds/image/random");
-  const image = response.json().message;
-  return image;
+  const image = await response.json();
+  return image.message;
 }
 
 async function fetchCatData(){
   const response = await fetch("https://api.thecatapi.com/v1/images/search");
-  const image = response.json().url;
-  return image;
+  const image = await response.json();
+  return image[0].url;
 }
 
 exports.handler = async () => {
