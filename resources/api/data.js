@@ -30,6 +30,5 @@ exports.handler = async () => {
         "https://cdn2.thecatapi.com/images/MTUzNjQwNw.jpg"
         ]
       })*/
-    
     };
   };
