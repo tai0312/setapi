@@ -1,8 +1,7 @@
 exports.handler = async () => {
     return {
       statusCode: 200,
-      body: 'Hello World',
-      /*body: JSON.stringify({
+      body: JSON.stringify({
         dog: ["https://images.dog.ceo/breeds/dhole/n02115913_312.jpg",
         "https://images.dog.ceo/breeds/pomeranian/n02112018_4840.jpg",
         "https://images.dog.ceo/breeds/vizsla/n02100583_917.jpg",
@@ -29,6 +28,6 @@ exports.handler = async () => {
         "https://cdn2.thecatapi.com/images/b11.jpg",
         "https://cdn2.thecatapi.com/images/MTUzNjQwNw.jpg"
         ]
-      })*/
+      })
     };
   };
