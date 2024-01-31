@@ -21,14 +21,14 @@ exports.handler = async () => {
     dog : [], cat : []
   }
   const promises = [];
-  for(let i = 0; i < 12; i++){
+  for(let i = 0; i < 9; i++){
     promises.push(fetchDogData());
     promises.push(fetchCatData());
   }
 
   const results = await Promise.all(promises);
 
-  for(let i = 0; i < 12; i++){
+  for(let i = 0; i < 9; i++){
     data.dog[i] = results[i * 2];
     data.cat[i] = results[i * 2 + 1];
   }
