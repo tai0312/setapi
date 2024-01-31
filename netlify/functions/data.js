@@ -1,4 +1,4 @@
-async function fetchDagData(){
+async function fetchDogData(){
   const response = await fetch("https://dog.ceo/api/breeds/image/random");
   const image = await response.json();
   return image.message;
@@ -20,9 +20,17 @@ exports.handler = async () => {
   const data = {
     dog : [], cat : []
   }
-  for(let i = 0;i < 12;i++){
-     data.dog[i] = await fetchDagData();
-     data.cat[i] = await fetchCatData();
+  const promises = [];
+  for(let i = 0; i < 12; i++){
+    promises.push(fetchDogData());
+    promises.push(fetchCatData());
+  }
+
+  const results = await Promise.all(promises);
+
+  for(let i = 0; i < 12; i++){
+    data.dog[i] = results[i * 2];
+    data.cat[i] = results[i * 2 + 1];
   }
     return {
       statusCode: 200,
